@@ -4,46 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>História • Meliantes</title>
+    <meta name="description" content="A origem dos Meliantes: do nascimento do Lords em 2021 até a fundação do novo lar em 2024.">
+    <meta name="theme-color" content="#000000">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Meliantes">
+    <meta property="og:title" content="A Origem dos Meliantes">
+    <meta property="og:description" content="Do nascimento do Lords em 2021 até a fundação do novo lar em 2024.">
+    <meta property="og:image" content="https://lzcrossz.github.io/Meliantes_site/assets/logo.jpg">
+    <meta property="og:url" content="https://lzcrossz.github.io/Meliantes_site/historia.html">
+    <meta name="twitter:card" content="summary">
     <link rel="icon" type="image/png" href="assets/favicon.png">
+    <script>document.documentElement.classList.add('js');</script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/tailwind-config.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        gold: {
-                            400: '#FACC15',
-                            500: '#EAB308',
-                            600: '#CA8A04',
-                            glow: '#FFD700'
-                        }
-                    },
-                    fontFamily: {
-                        epic: ['Cinzel', 'serif'],
-                        sans: ['Inter', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        .gold-glow-sm { box-shadow: 0 0 15px rgba(250, 204, 21, 0.2); }
-        .gold-glow-md { box-shadow: 0 0 25px rgba(250, 204, 21, 0.3); }
-        .text-gold-gradient {
-            background: linear-gradient(135deg, #FFF5C0 0%, #FACC15 50%, #9A7B0C 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .reveal-on-scroll {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .reveal-on-scroll.active { opacity: 1; transform: translateY(0); }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body class="bg-black text-neutral-100 min-h-full flex flex-col justify-between font-sans antialiased overflow-x-hidden selection:bg-gold-500 selection:text-black">
 
@@ -52,27 +29,27 @@
             <a href="index.html" class="flex items-center space-x-3 group">
                 <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-gold-600 via-gold-400 to-amber-200 p-[1px] gold-glow-sm transition duration-300 group-hover:scale-105 overflow-hidden">
                     <div class="w-full h-full bg-black rounded-[11px] flex items-center justify-center overflow-hidden">
-                        <img src="assets/logo.jpg" alt="Logo Meliantes" class="w-full h-full object-cover">
+                        <img src="assets/logo.jpg" alt="Logo Meliantes" width="40" height="40" class="w-full h-full object-cover">
                     </div>
                 </div>
-                <div class="flex flex-col">
-                    <span class="text-lg font-bold tracking-wider text-white group-hover:text-gold-400 transition font-epic">MELIANTES</span>
-                </div>
+                <span class="text-lg font-bold tracking-wider text-white group-hover:text-gold-400 transition font-epic">MELIANTES</span>
             </a>
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide">
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide" aria-label="Menu principal">
                 <a href="index.html" class="text-neutral-400 hover:text-gold-400 transition pb-1">Início</a>
-                <a href="historia.html" class="text-gold-400 border-b-2 border-gold-400 pb-1">História</a>
+                <a href="historia.html" aria-current="page" class="text-gold-400 border-b-2 border-gold-400 pb-1">História</a>
                 <div class="relative group">
                     <a href="membros.html" class="text-neutral-400 hover:text-gold-400 transition pb-1 flex items-center space-x-1">
                         <span>Membros</span>
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </a>
-                    <div class="absolute top-full left-0 mt-2 w-48 bg-neutral-950 border border-gold-500/20 rounded-xl shadow-2xl py-2 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition duration-200 z-50">
-                        <a href="membros.html#fundador" class="block px-4 py-2 text-xs font-semibold text-gold-400 hover:bg-gold-500/10">Fundador</a>
-                        <a href="membros.html#conselho" class="block px-4 py-2 text-xs text-neutral-300 hover:text-gold-400 hover:bg-gold-500/10">Conselho</a>
-                        <a href="membros.html#geral" class="block px-4 py-2 text-xs text-neutral-300 hover:text-gold-400 hover:bg-gold-500/10">Membros</a>
-                        <div class="border-t border-neutral-800 my-1"></div>
-                        <a href="membros.html#banidos" class="block px-4 py-2 text-xs text-rose-400 hover:bg-rose-500/10">Exilados</a>
+                    <div class="absolute top-full left-0 pt-2 w-48 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:pointer-events-auto transition duration-200 z-50">
+                        <div class="bg-neutral-950 border border-gold-500/20 rounded-xl shadow-2xl py-2">
+                            <a href="membros.html#fundador" class="block px-4 py-2 text-xs font-semibold text-gold-400 hover:bg-gold-500/10">Fundador</a>
+                            <a href="membros.html#conselho" class="block px-4 py-2 text-xs text-neutral-300 hover:text-gold-400 hover:bg-gold-500/10">Conselho</a>
+                            <a href="membros.html#geral" class="block px-4 py-2 text-xs text-neutral-300 hover:text-gold-400 hover:bg-gold-500/10">Membros</a>
+                            <div class="border-t border-neutral-800 my-1"></div>
+                            <a href="membros.html#banidos" class="block px-4 py-2 text-xs text-rose-400 hover:bg-rose-500/10">Exilados</a>
+                        </div>
                     </div>
                 </div>
                 <div class="text-neutral-600 cursor-not-allowed pb-1 flex items-center space-x-2 select-none" title="Página em construção">
@@ -82,82 +59,105 @@
                 </div>
             </nav>
             <div class="w-[150px] hidden md:block"></div>
+
+            <details class="mobile-menu md:hidden relative">
+                <summary class="w-11 h-11 flex items-center justify-center rounded-xl border border-gold-500/30 bg-neutral-950 text-gold-400 cursor-pointer select-none" aria-label="Abrir menu">
+                    <svg class="icon-open w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    <svg class="icon-close w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </summary>
+                <nav class="absolute right-0 top-full mt-3 w-64 bg-neutral-950 border border-gold-500/20 rounded-2xl shadow-2xl p-2 flex flex-col text-sm font-medium" aria-label="Menu principal">
+                    <a href="index.html" class="px-4 py-3 rounded-xl text-neutral-300 hover:text-gold-400 hover:bg-gold-500/10">Início</a>
+                    <a href="historia.html" aria-current="page" class="px-4 py-3 rounded-xl text-gold-400 bg-gold-500/10">História</a>
+                    <a href="membros.html" class="px-4 py-3 rounded-xl text-neutral-300 hover:text-gold-400 hover:bg-gold-500/10">Membros</a>
+                    <div class="ml-6 pl-3 mb-1 border-l border-gold-500/20 flex flex-col text-xs">
+                        <a href="membros.html#fundador" class="px-3 py-2 rounded-lg text-gold-400 hover:bg-gold-500/10">Fundador</a>
+                        <a href="membros.html#conselho" class="px-3 py-2 rounded-lg text-neutral-400 hover:text-gold-400 hover:bg-gold-500/10">Conselho</a>
+                        <a href="membros.html#geral" class="px-3 py-2 rounded-lg text-neutral-400 hover:text-gold-400 hover:bg-gold-500/10">Membros</a>
+                        <a href="membros.html#banidos" class="px-3 py-2 rounded-lg text-rose-400 hover:bg-rose-500/10">Exilados</a>
+                    </div>
+                    <div class="border-t border-neutral-800 my-1"></div>
+                    <div class="px-4 py-3 text-neutral-600 flex items-center justify-between select-none">
+                        <span>Meliantes Awards</span>
+                        <span class="text-[9px] uppercase tracking-wider px-1.5 py-0.5 rounded bg-neutral-900 border border-neutral-800 text-neutral-500 font-bold">Em breve</span>
+                    </div>
+                </nav>
+            </details>
         </div>
     </header>
 
-    <main class="flex-grow max-w-4xl mx-auto px-6 py-16 space-y-32">
+    <main class="flex-grow w-full max-w-4xl mx-auto px-6 py-16 space-y-32">
         <section class="text-center space-y-6 pt-16 pb-20 min-h-[40vh] flex flex-col justify-center items-center relative">
             <span class="text-xs font-bold uppercase tracking-[0.3em] text-gold-400 animate-pulse font-epic">A SAGA OFICIAL</span>
             <h1 class="text-4xl sm:text-6xl font-extrabold uppercase text-white tracking-wider font-epic">
                 A Origem dos <span class="text-gold-gradient">Meliantes</span>
             </h1>
-            <div class="absolute bottom-[-20px] text-neutral-500 text-xs uppercase tracking-widest animate-bounce flex flex-col items-center space-y-1">
+            <div class="absolute bottom-[-20px] text-neutral-500 text-xs uppercase tracking-widest animate-bounce flex flex-col items-center space-y-1" aria-hidden="true">
                 <span>Role para baixo</span>
                 <span>↓</span>
             </div>
         </section>
 
         <div class="space-y-36 border-l-2 border-gold-500/30 pl-8 ml-4 sm:ml-8 pb-12">
-            <div class="reveal-on-scroll relative space-y-4 pt-4">
-                <span class="absolute -left-[41px] top-5 w-4 h-4 rounded-full bg-gold-500 border-4 border-black gold-glow-sm"></span>
-                <span class="text-xs font-mono text-gold-400 uppercase tracking-widest font-epic">Capítulo I • Março de 2021</span>
+            <article class="reveal relative space-y-4 pt-4">
+                <span class="absolute -left-[41px] top-5 w-4 h-4 rounded-full bg-gold-500 border-4 border-black gold-glow-sm" aria-hidden="true"></span>
+                <span class="text-xs text-gold-400 uppercase tracking-widest font-epic">Capítulo I • Março de 2021</span>
                 <h2 class="text-2xl sm:text-4xl font-extrabold text-white leading-snug font-epic">
                     O nascimento do <span class="text-gold-400">Lords</span>
                 </h2>
                 <p class="text-neutral-300 text-lg sm:text-xl leading-relaxed font-light pt-2 tracking-wide">
                     Tudo começou em <strong>março de 2021</strong> com a fundação do <strong>Lords</strong>, o território sagrado onde os primeiros laços foram forjados e as histórias da nossa irmandade ganharam vida. Pouco tempo depois, o líder original acabou passando a posse de poder para outro, permanecendo presente na comunidade.
                 </p>
-            </div>
+            </article>
 
-            <div class="reveal-on-scroll relative space-y-4 pt-4">
-                <span class="absolute -left-[41px] top-5 w-4 h-4 rounded-full bg-gold-500 border-4 border-black gold-glow-sm"></span>
-                <span class="text-xs font-mono text-gold-400 uppercase tracking-widest font-epic">Capítulo II • Julho de 2021</span>
+            <article class="reveal relative space-y-4 pt-4">
+                <span class="absolute -left-[41px] top-5 w-4 h-4 rounded-full bg-gold-500 border-4 border-black gold-glow-sm" aria-hidden="true"></span>
+                <span class="text-xs text-gold-400 uppercase tracking-widest font-epic">Capítulo II • Julho de 2021</span>
                 <h2 class="text-2xl sm:text-4xl font-extrabold text-white leading-snug font-epic">
                     A grande <span class="text-gold-400">ascensão</span>
                 </h2>
                 <p class="text-neutral-300 text-lg sm:text-xl leading-relaxed font-light pt-2 tracking-wide">
                     Por volta de <strong>julho de 2021</strong>, com a nova liderança já estabelecida, o servidor entrou em sua fase de maior expansão. Uma onda de novos membros começou a chegar, transformando o Lords em um ecossistema vibrante e movimentado, crescendo mais do que nunca e expandindo seus horizontes.
                 </p>
-            </div>
+            </article>
 
-            <div class="reveal-on-scroll relative space-y-4 pt-4">
-                <span class="absolute -left-[41px] top-5 w-4 h-4 rounded-full bg-gold-500 border-4 border-black gold-glow-sm"></span>
-                <span class="text-xs font-mono text-gold-400 uppercase tracking-widest font-epic">Capítulo III • Abril de 2024</span>
+            <article class="reveal relative space-y-4 pt-4">
+                <span class="absolute -left-[41px] top-5 w-4 h-4 rounded-full bg-gold-500 border-4 border-black gold-glow-sm" aria-hidden="true"></span>
+                <span class="text-xs text-gold-400 uppercase tracking-widest font-epic">Capítulo III • Abril de 2024</span>
                 <h2 class="text-2xl sm:text-4xl font-extrabold text-white leading-snug font-epic">
                     O início da <span class="text-gold-400">queda</span>
                 </h2>
                 <p class="text-neutral-300 text-lg sm:text-xl leading-relaxed font-light pt-2 tracking-wide">
                     Em <strong>abril de 2024</strong>, o apogeu deu lugar à ruína. Aquele mesmo governante que conduziu o servidor ao topo acabou corrompido pela própria ambição, dando início à destruição do Lords por completo. Os alicerces desmoronaram, a moderação cedeu e o território transformou-se em um ambiente sem leis.
                 </p>
-            </div>
+            </article>
 
-            <div class="reveal-on-scroll relative space-y-4 pt-4">
-                <span class="absolute -left-[41px] top-5 w-4 h-4 rounded-full bg-gold-500 border-4 border-black gold-glow-sm"></span>
-                <span class="text-xs font-mono text-gold-400 uppercase tracking-widest font-epic">Capítulo IV • Maio de 2024</span>
+            <article class="reveal relative space-y-4 pt-4">
+                <span class="absolute -left-[41px] top-5 w-4 h-4 rounded-full bg-gold-500 border-4 border-black gold-glow-sm" aria-hidden="true"></span>
+                <span class="text-xs text-gold-400 uppercase tracking-widest font-epic">Capítulo IV • Maio de 2024</span>
                 <h2 class="text-2xl sm:text-4xl font-extrabold text-white leading-snug font-epic">
                     O nascimento dos <span class="text-gold-400">Meliantes</span>
                 </h2>
                 <p class="text-neutral-300 text-lg sm:text-xl leading-relaxed font-light pt-2 tracking-wide">
                     Diante do colapso inevitável, ergueu-se a resistência. Em <strong>maio de 2024</strong>, como um ato de preservação e desafio ao caos, os <strong>Meliantes</strong> foram oficialmente fundados. Inicialmente, um abrigo temporário para escapar da tormenta e manter unida a centelha daqueles que valorizavam a verdadeira convivência.
                 </p>
-            </div>
+            </article>
 
-            <div class="reveal-on-scroll relative space-y-4 pt-4">
-                <span class="absolute -left-[41px] top-5 w-4 h-4 rounded-full bg-gold-500 border-4 border-black gold-glow-sm"></span>
-                <span class="text-xs font-mono text-gold-400 uppercase tracking-widest font-epic">Capítulo V • A Nova Era</span>
+            <article class="reveal relative space-y-4 pt-4">
+                <span class="absolute -left-[41px] top-5 w-4 h-4 rounded-full bg-gold-500 border-4 border-black gold-glow-sm" aria-hidden="true"></span>
+                <span class="text-xs text-gold-400 uppercase tracking-widest font-epic">Capítulo V • A Nova Era</span>
                 <h2 class="text-2xl sm:text-4xl font-extrabold text-white leading-snug font-epic">
                     Do refúgio ao <span class="text-gold-400">novo lar</span>
                 </h2>
                 <p class="text-neutral-300 text-lg sm:text-xl leading-relaxed font-light pt-2 tracking-wide">
                     Aos poucos, o que era provisório tornou-se o destino definitivo. Um a um, os caminhos convergiram para cá, enquanto o antigo Lords adormecia para sempre, transformado hoje em um museu de memórias. Agora, os Meliantes não são apenas um abrigo, mas sim <span class="text-gold-400 font-semibold">um novo lar</span> construído sobre pilares sólidos e firmados para o futuro.
                 </p>
-            </div>
+            </article>
         </div>
 
-        <section class="reveal-on-scroll pt-12 pb-8">
+        <section class="reveal pt-12 pb-8">
             <div class="relative rounded-2xl bg-gradient-to-b from-neutral-900 to-neutral-950 border border-gold-500/30 p-8 sm:p-12 text-center space-y-6 gold-glow-md overflow-hidden">
-                <div class="absolute -top-24 -right-24 w-48 h-48 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
-                <div class="absolute -bottom-24 -left-24 w-48 h-48 bg-gold-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -top-24 -right-24 w-48 h-48 bg-gold-500/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+                <div class="absolute -bottom-24 -left-24 w-48 h-48 bg-gold-500/10 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
                 <span class="text-xs font-bold uppercase tracking-[0.3em] text-gold-400 font-epic">A Irmandade</span>
                 <h2 class="text-2xl sm:text-4xl font-extrabold text-white uppercase tracking-wider font-epic">
                     Conheça os <span class="text-gold-gradient">Meliantes</span>
@@ -168,7 +168,7 @@
                 <div class="pt-4">
                     <a href="membros.html" class="inline-flex items-center space-x-3 px-8 py-4 rounded-xl bg-gold-500 hover:bg-gold-400 text-black font-bold text-sm tracking-wider uppercase transition duration-300 gold-glow-sm hover:scale-105">
                         <span>Explorar Membros</span>
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </a>
                 </div>
             </div>
@@ -179,20 +179,6 @@
         <p>Meliantes • Todos os direitos reservados.</p>
     </footer>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const reveals = document.querySelectorAll(".reveal-on-scroll");
-            function checkReveal() {
-                const triggerBottom = window.innerHeight * 0.85;
-                reveals.forEach(element => {
-                    if (element.getBoundingClientRect().top < triggerBottom) {
-                        element.classList.add("active");
-                    }
-                });
-            }
-            window.addEventListener("scroll", checkReveal);
-            checkReveal();
-        });
-    </script>
+    <script src="assets/js/site.js"></script>
 </body>
 </html>

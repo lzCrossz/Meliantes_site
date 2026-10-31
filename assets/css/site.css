@@ -1,0 +1,90 @@
+/* Estilos compartilhados pelas páginas dos Meliantes */
+
+.gold-glow-sm { box-shadow: 0 0 20px rgba(250, 204, 21, 0.2); }
+.gold-glow-md { box-shadow: 0 0 25px rgba(250, 204, 21, 0.3); }
+.gold-glow-lg { box-shadow: 0 0 50px rgba(250, 204, 21, 0.4); }
+
+.text-gold-gradient {
+    background: linear-gradient(135deg, #FFF5C0 0%, #FACC15 50%, #9A7B0C 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Âncoras não ficam escondidas atrás do header fixo */
+section[id] { scroll-margin-top: 6rem; }
+
+/* ---------- Revelar ao rolar ----------
+   Só esconde quando o JS está ativo (classe .js no <html>),
+   assim o conteúdo continua visível se o script falhar. */
+.js .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.js .reveal.is-visible { opacity: 1; transform: none; }
+
+/* ---------- Intro da página inicial ---------- */
+#intro-overlay { display: none; }
+.js.intro #intro-overlay { display: flex; }
+.curtain-panel { transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1); }
+
+@keyframes floatLogo {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-12px) scale(1.02); }
+}
+.animate-float { animation: floatLogo 4s ease-in-out infinite; }
+
+/* ---------- Menu mobile (<details>, funciona sem JS) ---------- */
+.mobile-menu > summary { list-style: none; }
+.mobile-menu > summary::-webkit-details-marker { display: none; }
+.mobile-menu .icon-close { display: none; }
+.mobile-menu[open] .icon-open { display: none; }
+.mobile-menu[open] .icon-close { display: block; }
+
+/* ---------- Cards de membros ---------- */
+.card-epic-effect { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+.card-epic-effect:hover { transform: translateY(-5px) scale(1.02); }
+.member-card:focus-visible { outline: 2px solid #FACC15; outline-offset: 4px; }
+
+/* Painel de detalhes: tooltip com mouse, bloco fixo no toque */
+.member-tip { width: 100%; }
+.member-tip-arrow { display: none; }
+
+@media (hover: hover) and (pointer: fine) {
+    .member-tip {
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        width: 16rem;
+        margin-bottom: 1.25rem;
+        z-index: 50;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateX(-50%) scale(0.95);
+        transition: opacity 0.3s, transform 0.3s;
+    }
+    .member-tip.is-compact { width: 14rem; }
+    .member-tip-arrow { display: block; }
+    .member-card:hover .member-tip,
+    .member-card:focus-within .member-tip {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+@media not all and (hover: hover) and (pointer: fine) {
+    .member-tip { order: 10; }
+}
+
+/* ---------- Menos movimento para quem pede ---------- */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    .js .reveal { opacity: 1; transform: none; }
+}
