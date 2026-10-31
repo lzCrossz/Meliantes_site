@@ -105,32 +105,56 @@ function winnerOnly(winner) {
         </div>`;
 }
 
-// Card especial para a categoria principal (ex.: Melhor Meliante do ano)
+// Card especial: destaque: true (dourado, prêmio máximo) ou destaque: "pior" (vermelho, vergonha máxima)
+const LEGEND_STYLES = {
+    melhor: {
+        cardClass: '',
+        emoji: '👑',
+        avatarGradient: 'from-gold-600 via-gold-400 to-amber-100',
+        nameClass: 'text-gold-gradient',
+        initialsColor: 'text-gold-400',
+        badgeClass: 'text-gold-400 bg-gold-500/10 border-gold-500/40 gold-glow-sm',
+        badge: '★ Prêmio máximo ★',
+        footer: 'O grande vencedor da edição'
+    },
+    pior: {
+        cardClass: 'is-worst',
+        emoji: '💀',
+        avatarGradient: 'from-rose-800 via-red-500 to-rose-300',
+        nameClass: 'text-blood-gradient',
+        initialsColor: 'text-rose-400',
+        badgeClass: 'text-rose-300 bg-rose-500/10 border-rose-500/50 shadow-[0_0_20px_rgba(244,63,94,0.35)]',
+        badge: '☠ Vergonha máxima ☠',
+        footer: 'A grande vergonha da edição'
+    }
+};
+
 function legendCard(category) {
+    const style = LEGEND_STYLES[category.destaque === 'pior' ? 'pior' : 'melhor'];
     const winners = [].concat(category.vencedores || category.vencedor);
     const people = winners.map(w => {
         const initials = String(w.nome).split(/\s+/).slice(0, 2).map(p => p[0]).join('').toUpperCase();
         const photo = w.img
             ? `<img src="${escapeHTML(w.img)}" alt="Foto de ${escapeHTML(w.nome)}" class="w-full h-full object-cover rounded-[22px]" onerror="this.onerror=null;this.src='assets/logo.jpg'">`
-            : `<span class="w-full h-full rounded-[22px] bg-black flex items-center justify-center text-4xl font-epic font-bold text-gold-400">${escapeHTML(initials)}</span>`;
+            : `<span class="w-full h-full rounded-[22px] bg-black flex items-center justify-center text-4xl font-epic font-bold ${style.initialsColor}">${escapeHTML(initials)}</span>`;
         return `
             <div class="flex flex-col items-center space-y-5">
                 <div class="relative pt-8">
-                    <span class="legend-crown absolute top-0 left-1/2 text-5xl" aria-hidden="true">👑</span>
-                    <div class="legend-avatar w-36 h-36 sm:w-44 sm:h-44 rounded-3xl p-[3px] bg-gradient-to-tr from-gold-600 via-gold-400 to-amber-100">${photo}</div>
+                    <span class="legend-crown absolute top-0 left-1/2 text-5xl" aria-hidden="true">${style.emoji}</span>
+                    <div class="legend-avatar w-36 h-36 sm:w-44 sm:h-44 rounded-3xl p-[3px] bg-gradient-to-tr ${style.avatarGradient}">${photo}</div>
                 </div>
-                <p class="text-4xl sm:text-6xl font-extrabold font-epic text-gold-gradient leading-tight break-words">${escapeHTML(w.nome)}</p>
+                <p class="text-4xl sm:text-6xl font-extrabold font-epic ${style.nameClass} leading-tight break-words">${escapeHTML(w.nome)}</p>
             </div>`;
     }).join('');
     return `
-        <article class="award-legend">
+        <article class="award-legend ${style.cardClass}">
             <div class="award-legend-inner px-6 py-12 sm:py-16 text-center space-y-8">
                 <div class="space-y-4">
-                    <span class="inline-block text-[10px] sm:text-xs font-extrabold uppercase tracking-[0.4em] text-gold-400 px-4 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/40 gold-glow-sm">★ Prêmio máximo ★</span>
+                    <span class="inline-block text-[10px] sm:text-xs font-extrabold uppercase tracking-[0.4em] px-4 py-1.5 rounded-full border ${style.badgeClass}">${style.badge}</span>
                     <h3 class="text-2xl sm:text-4xl font-extrabold uppercase text-white font-epic tracking-wider">${escapeHTML(category.categoria)}</h3>
                 </div>
                 <div class="flex flex-wrap justify-center gap-12">${people}</div>
-                <p class="text-[11px] uppercase tracking-[0.35em] text-neutral-400">O grande vencedor da edição</p>
+                <p class="text-[11px] uppercase tracking-[0.35em] text-neutral-400">${style.footer}</p>
             </div>
         </article>`;
 }

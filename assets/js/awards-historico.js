@@ -14,7 +14,7 @@
 //
 // "img" é opcional. Para casal/dupla dá para usar duas fotos: img: ["assets/a.jpg", "assets/b.jpg"]
 // "detalhe" (opcional) aparece embaixo do nome do vencedor.
-// "destaque: true" transforma a categoria no card especial do prêmio máximo.
+// "destaque: true" transforma a categoria no card dourado do prêmio máximo; destaque: "pior" no card vermelho da vergonha.
 const awardsHistorico = {
     2025: [
         { categoria: "Mais provável de ser preso", vencedor: { nome: "Oliveira", img: "assets/oliveira.jpg" } },
@@ -31,7 +31,7 @@ const awardsHistorico = {
         { categoria: "Momento do ano", vencedor: { nome: "“Deixa Comigo”", detalhe: "por Bielcachu", img: "assets/bielcachu.jpg" } },
         { categoria: "Jogo do ano (GOTY)", vencedor: { nome: "Silksong", img: "assets/silksong.jpg" } },
         { categoria: "Jogo multiplayer do ano", vencedor: { nome: "R.E.P.O", img: "assets/repo.jpg" } },
-        { categoria: "Pior Meliante do ano", vencedor: { nome: "Putridkhan31", img: "assets/putridkhan31.jpg" } },
+        { categoria: "Pior Meliante do ano", destaque: "pior", vencedor: { nome: "Putridkhan31", img: "assets/putridkhan31.jpg" } },
         { categoria: "Melhor Meliante do ano", destaque: true, vencedor: { nome: "Gusttxxx", img: "assets/gusttxxx.jpg" } }
     ],
     2024: [
@@ -60,7 +60,7 @@ const awardsHistorico = {
         { categoria: "Melhor jogo do ano", vencedor: { nome: "Roblox", img: "assets/roblox.jpg" } },
         { categoria: "Mais provável de vir a óbito antes de 2025", vencedor: { nome: "Manopombo", img: "assets/manopombo.jpg" } },
         { categoria: "Mais maluco", vencedor: { nome: "Oliveira", img: "assets/oliveira.jpg" } },
-        { categoria: "Pior Meliante do ano", vencedor: { nome: "Putridkhan31", img: "assets/putridkhan31.jpg" } },
+        { categoria: "Pior Meliante do ano", destaque: "pior", vencedor: { nome: "Putridkhan31", img: "assets/putridkhan31.jpg" } },
         { categoria: "Melhor Meliante do ano", destaque: true, vencedor: { nome: "JUAN", img: "assets/juan.jpg" } }
     ]
 };

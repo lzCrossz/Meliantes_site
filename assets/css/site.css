@@ -132,6 +132,46 @@ section[id] { scroll-margin-top: 6rem; }
     animation: legendCrown 2.5s ease-in-out infinite;
 }
 
+/* Variante "pior": vermelho sangue, brilho que treme */
+@keyframes worstGlow {
+    0%, 100% { box-shadow: 0 0 30px rgba(220, 38, 38, 0.45), 0 0 80px rgba(127, 29, 29, 0.35); }
+    45% { box-shadow: 0 0 55px rgba(239, 68, 68, 0.8), 0 0 120px rgba(153, 27, 27, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(220, 38, 38, 0.3), 0 0 60px rgba(127, 29, 29, 0.25); }
+    55% { box-shadow: 0 0 55px rgba(239, 68, 68, 0.8), 0 0 120px rgba(153, 27, 27, 0.5); }
+}
+@keyframes worstSkull {
+    0%, 100% { transform: translate(-50%, 0) rotate(0deg); }
+    25% { transform: translate(-50%, -3px) rotate(-10deg); }
+    75% { transform: translate(-50%, -3px) rotate(10deg); }
+}
+.award-legend.is-worst {
+    background: conic-gradient(from var(--legend-angle), #450a0a, #f87171, #dc2626, #7f1d1d, #fca5a5, #450a0a);
+    animation: legendSpin 7s linear infinite reverse, worstGlow 2.4s ease-in-out infinite;
+}
+.award-legend.is-worst .award-legend-inner {
+    background:
+        radial-gradient(ellipse at 50% 0%, rgba(220, 38, 38, 0.3), transparent 60%),
+        radial-gradient(ellipse at 50% 100%, rgba(127, 29, 29, 0.35), transparent 55%),
+        linear-gradient(#1a0606, #000);
+}
+.award-legend.is-worst .award-legend-inner::before {
+    background: linear-gradient(90deg, transparent, rgba(254, 202, 202, 0.1), transparent);
+}
+.award-legend.is-worst .legend-avatar {
+    box-shadow: 0 0 40px rgba(220, 38, 38, 0.65), 0 0 90px rgba(127, 29, 29, 0.4);
+}
+.award-legend.is-worst .legend-avatar img { filter: saturate(0.6) contrast(1.1); }
+.award-legend.is-worst .legend-crown {
+    filter: drop-shadow(0 0 12px rgba(239, 68, 68, 0.9));
+    animation: worstSkull 1.8s ease-in-out infinite;
+}
+.text-blood-gradient {
+    background: linear-gradient(135deg, #fecaca 0%, #ef4444 50%, #7f1d1d 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 /* ---------- Menos movimento para quem pede ---------- */
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
