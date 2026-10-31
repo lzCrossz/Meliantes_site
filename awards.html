@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="h-full scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awards • Meliantes</title>
+    <meta name="description" content="Meliantes Awards: a votação anual da comunidade. Entre com o Discord, vote em cada categoria e veja os resultados das edições passadas.">
+    <meta name="theme-color" content="#000000">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Meliantes">
+    <meta property="og:title" content="Meliantes Awards">
+    <meta property="og:description" content="A votação anual da comunidade. Entre com o Discord e deixe seu voto.">
+    <meta property="og:image" content="https://lzcrossz.github.io/Meliantes_site/assets/logo.jpg">
+    <meta property="og:url" content="https://lzcrossz.github.io/Meliantes_site/awards.html">
+    <meta name="twitter:card" content="summary">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <script>document.documentElement.classList.add('js');</script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/tailwind-config.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body class="bg-black text-neutral-100 min-h-full flex flex-col justify-between font-sans antialiased overflow-x-hidden selection:bg-gold-500 selection:text-black">
+
+    <div class="fixed inset-0 -z-10 flex items-center justify-center pointer-events-none overflow-hidden" aria-hidden="true">
+        <div class="w-[1000px] h-[1000px] bg-gradient-to-tr from-amber-600/15 via-gold-500/10 to-transparent rounded-full filter blur-[180px]"></div>
+    </div>
+
+    <header class="sticky top-0 z-50 w-full bg-black/90 backdrop-blur-md border-b border-gold-500/20">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-gold-600 via-gold-400 to-amber-200 p-[1px] gold-glow-sm transition duration-300 group-hover:scale-105 overflow-hidden">
+                    <div class="w-full h-full bg-black rounded-[11px] flex items-center justify-center overflow-hidden">
+                        <img src="assets/logo.jpg" alt="Logo Meliantes" width="40" height="40" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                <span class="text-lg font-bold tracking-wider text-white group-hover:text-gold-400 transition font-epic">MELIANTES</span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide" aria-label="Menu principal">
+                <a href="index.html" class="text-neutral-400 hover:text-gold-400 transition pb-1">Início</a>
+                <a href="historia.html" class="text-neutral-400 hover:text-gold-400 transition pb-1">História</a>
+                <div class="relative group">
+                    <a href="membros.html" class="text-neutral-400 hover:text-gold-400 transition pb-1 flex items-center space-x-1">
+                        <span>Membros</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </a>
+                    <div class="absolute top-full left-0 pt-2 w-48 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:pointer-events-auto transition duration-200 z-50">
+                        <div class="bg-neutral-950 border border-gold-500/20 rounded-xl shadow-2xl py-2">
+                            <a href="membros.html#fundador" class="block px-4 py-2 text-xs font-semibold text-gold-400 hover:bg-gold-500/10">Fundador</a>
+                            <a href="membros.html#conselho" class="block px-4 py-2 text-xs text-neutral-300 hover:text-gold-400 hover:bg-gold-500/10">Conselho</a>
+                            <a href="membros.html#geral" class="block px-4 py-2 text-xs text-neutral-300 hover:text-gold-400 hover:bg-gold-500/10">Membros</a>
+                            <div class="border-t border-neutral-800 my-1"></div>
+                            <a href="membros.html#banidos" class="block px-4 py-2 text-xs text-rose-400 hover:bg-rose-500/10">Exilados</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="awards.html" aria-current="page" class="text-gold-400 border-b-2 border-gold-400 pb-1">Meliantes Awards</a>
+            </nav>
+            <div class="w-[150px] hidden md:block"></div>
+
+            <details class="mobile-menu md:hidden relative">
+                <summary class="w-11 h-11 flex items-center justify-center rounded-xl border border-gold-500/30 bg-neutral-950 text-gold-400 cursor-pointer select-none" aria-label="Abrir menu">
+                    <svg class="icon-open w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                    <svg class="icon-close w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </summary>
+                <nav class="absolute right-0 top-full mt-3 w-64 bg-neutral-950 border border-gold-500/20 rounded-2xl shadow-2xl p-2 flex flex-col text-sm font-medium" aria-label="Menu principal">
+                    <a href="index.html" class="px-4 py-3 rounded-xl text-neutral-300 hover:text-gold-400 hover:bg-gold-500/10">Início</a>
+                    <a href="historia.html" class="px-4 py-3 rounded-xl text-neutral-300 hover:text-gold-400 hover:bg-gold-500/10">História</a>
+                    <a href="membros.html" class="px-4 py-3 rounded-xl text-neutral-300 hover:text-gold-400 hover:bg-gold-500/10">Membros</a>
+                    <div class="ml-6 pl-3 mb-1 border-l border-gold-500/20 flex flex-col text-xs">
+                        <a href="membros.html#fundador" class="px-3 py-2 rounded-lg text-gold-400 hover:bg-gold-500/10">Fundador</a>
+                        <a href="membros.html#conselho" class="px-3 py-2 rounded-lg text-neutral-400 hover:text-gold-400 hover:bg-gold-500/10">Conselho</a>
+                        <a href="membros.html#geral" class="px-3 py-2 rounded-lg text-neutral-400 hover:text-gold-400 hover:bg-gold-500/10">Membros</a>
+                        <a href="membros.html#banidos" class="px-3 py-2 rounded-lg text-rose-400 hover:bg-rose-500/10">Exilados</a>
+                    </div>
+                    <div class="border-t border-neutral-800 my-1"></div>
+                    <a href="awards.html" aria-current="page" class="px-4 py-3 rounded-xl text-gold-400 bg-gold-500/10">Meliantes Awards</a>
+                </nav>
+            </details>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-3xl mx-auto px-6 py-20 space-y-12 w-full">
+        <section class="text-center space-y-6 pt-6">
+            <span class="inline-block text-xs font-extrabold uppercase tracking-[0.4em] text-gold-400 animate-pulse font-epic px-5 py-2 rounded-full bg-gold-500/10 border border-gold-500/30 gold-glow-sm">Votação Anual</span>
+            <h1 class="text-4xl sm:text-7xl font-extrabold uppercase text-white tracking-wider font-epic">
+                Meliantes <span class="text-gold-gradient">Awards</span>
+            </h1>
+            <p class="text-neutral-400 text-lg max-w-2xl mx-auto font-light leading-relaxed">
+                Todo fim de ano a irmandade decide quem leva cada título. Entre com seu Discord, deixe seu voto e relembre os vencedores das edições passadas.
+            </p>
+        </section>
+
+        <div id="year-tabs" class="flex justify-center gap-3 flex-wrap" role="group" aria-label="Escolher edição"></div>
+
+        <section id="awards-app" class="space-y-8" aria-live="polite">
+            <noscript>
+                <p class="text-center text-sm text-neutral-400">Ative o JavaScript para votar e ver os resultados.</p>
+            </noscript>
+        </section>
+    </main>
+
+    <div id="toast" class="opacity-0 pointer-events-none fixed bottom-6 left-1/2 -translate-x-1/2" role="status"></div>
+
+    <footer class="w-full bg-black border-t border-gold-500/10 py-8 text-center text-xs text-neutral-500">
+        <p>Meliantes • Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+    <script src="assets/js/awards-config.js"></script>
+    <script src="assets/js/awards-historico.js"></script>
+    <script src="assets/js/awards.js"></script>
+    <script src="assets/js/site.js"></script>
+</body>
+</html>
