@@ -205,7 +205,7 @@ async function logout() {
 // Renderização
 // ---------------------------------------------------------------------
 function renderTabs() {
-    const years = [state.currentYear, ...Object.keys(awardsHistorico).map(Number).filter(y => y !== state.currentYear).sort((a, b) => b - a)];
+    const years = [...new Set([...Object.keys(awardsHistorico).map(Number), state.currentYear])].sort((a, b) => a - b);
     tabs.innerHTML = years.map(year => {
         const active = year === state.selectedYear;
         return `<button type="button" data-year="${year}" aria-pressed="${active}" class="px-5 py-2.5 rounded-xl text-sm font-bold font-epic tracking-wider border transition ${active ? 'bg-gold-500 text-black border-gold-500 gold-glow-sm' : 'bg-neutral-950 text-neutral-300 border-gold-500/25 hover:border-gold-500/60 hover:text-gold-400'}">${year}${year === state.currentYear ? ' <span class="text-[10px] uppercase tracking-widest opacity-70">atual</span>' : ''}</button>`;
