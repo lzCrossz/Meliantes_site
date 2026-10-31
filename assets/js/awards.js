@@ -140,7 +140,7 @@ function legendCard(category) {
         return `
             <div class="flex flex-col items-center space-y-5">
                 <div class="relative pt-8">
-                    <span class="legend-crown absolute top-0 left-1/2 text-5xl" aria-hidden="true">${style.emoji}</span>
+                    <span class="legend-crown absolute top-0 left-1/2 z-10 text-5xl" aria-hidden="true">${style.emoji}</span>
                     <div class="legend-avatar w-36 h-36 sm:w-44 sm:h-44 rounded-3xl p-[3px] bg-gradient-to-tr ${style.avatarGradient}">${photo}</div>
                 </div>
                 <p class="text-4xl sm:text-6xl font-extrabold font-epic ${style.nameClass} leading-tight break-words">${escapeHTML(w.nome)}</p>
